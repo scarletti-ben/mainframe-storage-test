@@ -1,11 +1,11 @@
 # mainframe-storage-test
-This is a test application utilising a `Cloud Firestore` database from `Firebase` 
+This is a test application utilising a `Cloud Firestore` database from `Firebase`, you can access the site [here](https://scarletti-ben.github.io/mainframe-storage-test/)
 
-In the `Firebase Console` you can add apps, in this case a web app has been added called 'test', in practice what happens when you add an app to a `Firebase` project is that you generate a new `appId` that can be used alongside the public API key to interact with the components of your `Firebase` project
+In the `Firebase Console` you can add apps, in this case a web app has been added called 'test'. In practice what happens when you add an app to a `Firebase` project is that you generate a new `appId` that can be used alongside the public API key to interact with the components of your `Firebase` project
 
 You can use `Firebase` for hosting an app / site as well but this shows that it's not entirely necessary, you can host the site anywhere and you can still interface with a `Firestore` database, with authentication handled server-side by `Google`
 
-Creating the 'test' application gives you the code snippet below, for use in the 'test' application, the `apiKey` is public, and is not meant to be a secret, it identifies your `Firebase` project, authentication is handled separately
+Creating the 'test' application gives you the code snippet below, for use in the 'test' application. It is important to note that the `apiKey` is is not meant to be a secret , it is entirely public as it identifies your `Firebase` project
 
 ```javascript
 // Import the functions you need from the SDKs you need
@@ -56,8 +56,6 @@ const app = initializeApp(firebaseConfigAlternate, appNickname);
 // Log the app name to the console
 console.log("Firebase App Name: ", app.name);
 ```
-
-
 
 The database can be viewed at `https://console.firebase.google.com/u/3/project/mainframe-storage/firestore/databases/-default-/data/~2Ftest~2FtestDoc`
 
