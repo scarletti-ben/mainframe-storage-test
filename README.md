@@ -59,6 +59,9 @@ console.log("Firebase App Name: ", app.name);
 
 The database can be viewed at `https://console.firebase.google.com/u/3/project/mainframe-storage/firestore/databases/-default-/data/~2Ftest~2FtestDoc`
 
-# Environment
+# Testing Locally
+By default `Firebase` only allows connections from whitelisted sites, this means that you may need to add a local URL to the whitelisted sites if it doesn't start with `localhost`, adding `http://127.0.0.1` to the whitelist will likely help
+
+# Environment Information
 - Tested using `Google Chrome Version 135.0.7049.96 (Official Build) (64-bit)`
 - Not tested on mobile devices or other desktop browsers
