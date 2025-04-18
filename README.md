@@ -62,6 +62,50 @@ The database can be viewed at `https://console.firebase.google.com/u/3/project/m
 # Testing Locally
 By default `Firebase` only allows connections from whitelisted sites, this means that you may need to add a local URL to the whitelisted sites if it doesn't start with `localhost`, adding `http://127.0.0.1` to the whitelist will likely help
 
+# Miscellaneous
+- `Firebase` may try to make a realtime connection to your site to push changes, `uBlock Origin` does not like this and may block the requests
+
 # Environment Information
 - Tested using `Google Chrome Version 135.0.7049.96 (Official Build) (64-bit)`
 - Not tested on mobile devices or other desktop browsers
+
+![alt text](screenshots/screenshot001.png)
+
+
+# THING
+First enable `Authentication` [here](https://console.firebase.google.com/u/3/project/mainframe-storage/authentication), and choose `Google` as a sign-in provider, ignore the warnings for `SHA-1`
+
+Then go to `Authentication` settings and add `http://127.0.0.1` to the whitelist under "authorized domains"
+
+
+`Cloud Firestore` rules
+```
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
+```
+
+
+```
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+    
+      // Allow authenticated users to read/write
+      allow read, write: if request.auth != null;
+      
+      // Default deny for other users
+      allow read, write: if false;
+      
+    }
+  }
+}
+```
