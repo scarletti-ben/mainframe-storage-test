@@ -1,5 +1,5 @@
 # mainframe-storage-test
-This is a private repository, and a test application for `Firebase`
+This is a test application utilising a `Cloud Firestore` database from `Firebase` 
 
 In the `Firebase Console` you can add apps, in this case a web app has been added called 'test', in practice what happens when you add an app to a `Firebase` project is that you generate a new `appId` that can be used alongside the public API key to interact with the components of your `Firebase` project
 
